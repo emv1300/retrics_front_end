@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import tradeify_logo from '../assets/tradeify_logo.png';
+import '../css/app.css';
 
 function LoginForm({ Login, error}) {
-    const [details, setDetails] = useState({username:"", password:""});
+    const [details, setDetails] = useState({email:"", password:""});
     
     const submitHandler = e => {
         e.preventDefault();
-
+        
         Login(details);
     }
 
     return (
-        <form onSubmit = {submitHandler} className = "trialBox">
+        <div className = "backgroundColor">
+        <form onSubmit = {submitHandler} className = "box">
             <div className = "formInner"> 
-                <img className = "loginLogo"  src = {tradeify_logo}  heigth = "120" width = "240"  />
+                <img className = "loginLogo" alt = "website logo" src = {tradeify_logo}  heigth = "120" width = "240"  />
                 {/* Error */}
-                {(error != "") ? ( <div className = "error">{error}</div> ): ""}
+                {(error !== "") ? ( <div className = "error">{error}</div> ): ""}
                 <div className = "formGroup">
                     <input 
                         type = "email" 
@@ -38,7 +40,7 @@ function LoginForm({ Login, error}) {
                 <input type = "submit" value = "Login" className = "roundRectangle"/>
             </div>
         </form>
-    
+        </div>
     )
 }
 export default LoginForm
