@@ -3,6 +3,8 @@ import whiteLogo from '../assets/tradeify_logo_white.png'
 import {BiUserCircle} from 'react-icons/bi'
 import '../css/dashboard.css';
 import DiamondCard from './cards/diamondCard';
+import EmeraldCard from './cards/emeraldCard';
+import RubyCard from './cards/rubyCard';
 
 function DashBoard({Logout}){
 
@@ -10,6 +12,15 @@ function DashBoard({Logout}){
 
 
     const NextDay = () => {
+        let dprice = parseInt(localStorage.getItem('diamond'));
+        dprice += 20;
+        localStorage.setItem("diamond", dprice);
+        let eprice = parseInt(localStorage.getItem('emerald'));
+        eprice += 10;
+        localStorage.setItem("emerald", eprice);
+        let rprice = parseInt(localStorage.getItem('ruby'));
+        rprice += 5;
+        localStorage.setItem("ruby", rprice);
         console.log("next day")
     }
     
@@ -39,7 +50,12 @@ function DashBoard({Logout}){
                     <div className="dSpace">
                         <DiamondCard/>
                     </div>
-                    
+                    <div className="dSpace">
+                        <EmeraldCard/>  
+                    </div>
+                    <div className="dSpace">
+                        <RubyCard/>  
+                    </div>
                 </div>
             </div>
         </div>       
