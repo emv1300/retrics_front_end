@@ -1,5 +1,5 @@
 import React from 'react'
-import "../css/chartsBoxes.css"
+import "../css/chartBoxes.css"
 
 function Charts() {
 
