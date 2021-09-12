@@ -10,6 +10,7 @@ function DiamondCard() {
     let [buyQprice, setBuyQprice] = useState(0);
     let [sellQ, setSellQ] = useState(0);
     let [sellQprice, setSellQprice] = useState(0);
+    
     let ownedQ = localStorage.getItem('diamondsOwned');
     let ownedQprice = ownedQ * price;
 
