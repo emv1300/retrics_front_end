@@ -1,9 +1,11 @@
 .chartContainer {
-    margin-left: 20%;
+    margin-left: 5%;
+    text-align: center;
   }
   
   .allCharts {
     display: flex;
+    
   }
   .leftSide {
     margin: 20px;
@@ -12,9 +14,10 @@
     margin: 20px;
   }
   .chartsBox {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 50px;
-    width: 150px;
+    font-size: large;
+    box-shadow: 0 4px 8px 0 #404040;
+    padding: 90px;
+    width: 350px;
     height: 20px;
     background: #fff;
     border-radius: 15px;
