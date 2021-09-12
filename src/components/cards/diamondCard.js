@@ -50,14 +50,14 @@ function DiamondCard() {
         </div>
         <div className="bottomCard">
             <p className="greyText">Buy</p>
-            <div className="DiamondsBuySell">
+            <div className="GemsBuySell">
                 <button className = "plusMinusBT" onClick = {decreaseBuyQP}> - </button>
                 <div className="whiteValue">{buyQ} </div>
                 <button className = "plusMinusBT" onClick = {increaseBuyQP}> + </button>
                 <div className="greyValue">{buyQprice} $</div>
             </div>
             <p className="greyText">Sell</p>
-            <div className="DiamondsBuySell">
+            <div className="GemsBuySell">
                 <button className = "plusMinusBT" onClick = {decreaseSellQP}> - </button>
                 <div className="whiteValue">{sellQ} </div>
                 <button className = "plusMinusBT" onClick = {increaseSellQP}> + </button>
