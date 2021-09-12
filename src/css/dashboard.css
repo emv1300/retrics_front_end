@@ -1,5 +1,11 @@
-
-.topNavBar {
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .topNavBar {
     background-color: #a20e0e;
     overflow: hidden;
     display: flex;
@@ -13,43 +19,49 @@
     left: 50%;
     transform: translateX(-50%);
   }
-
-.topNavBar .nextDayBT{
+  
+  .topNavBar .nextDayBT {
     margin-left: 15px;
     margin-right: 25px;
     padding: 10px 10px;
     border-radius: 20px;
     border: none;
-    background: #FFF;
-    color: #A20E0E;
+    background: #fff;
+    color: #a20e0e;
     display: inline-block;
-}
-
-.topNavBar .nextDayBT:active{
-    transform:scale(0.9);
- }
-
-.topNavBar .balance{
+  }
+  
+  .topNavBar .nextDayBT:active {
+    transform: scale(0.9);
+  }
+  
+  .topNavBar .balance {
     padding: 10px 8px;
     border-radius: 20px;
-    border-color: #F5F5F5;
+    border-color: #f5f5f5;
     background: #404040;
-    color: #FFF;
+    color: #fff;
     display: inline-block;
-}
-
-.topNavBar .logoutBT{
-    background-color: #A20E0E;
+  }
+  
+  .topNavBar .logoutBT {
+    background-color: #a20e0e;
     border-radius: 50%;
     border: none;
-}
-.topNavBar .userIcon{
-    background-color: #FFF;
-    color: #A20E0E;
+  }
+  .topNavBar .userIcon {
+    background-color: #fff;
+    color: #a20e0e;
     border-radius: 50%;
     border: #404040;
     margin-right: 10px;
-}
-.topNavBar .userIcon:active{
-   transform:scale(0.9);
-}
+  }
+  .topNavBar .userIcon:active {
+    transform: scale(0.9);
+  }
+  .sideBar {
+    height: 90vh;
+    width: 250px;
+    background-color: #fff;
+  }
+  
