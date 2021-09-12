@@ -1,0 +1,93 @@
+.Card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: 0.3s;
+  border-radius: 10px;
+  width: 350px;
+  height: 550px;
+  overflow: hidden;
+  
+  background: #f5f5f5;
+}
+.Card:hover {
+  box-shadow: 0 4px 8px 0 #404040;
+  transform: scale(1.1);
+}
+.topCard {
+  width: auto;
+  padding-left: 40px;
+  background-color: #404040;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  border-radius: 10px;
+}
+.topCardDetails {
+  margin-left: 32px;
+}
+.plusMinusBT {
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  margin: 0 20px 0 20px;
+  background-color: #a20e0e;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 8px 0 #404040;;
+}
+.plusMinusBT:active {
+  transform: scale(0.9);
+}
+
+.greyText {
+  margin-top: 40px;
+  color: #404040;
+}
+.greyValue {
+  width: auto;
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  background: #404040;
+  color: #fff;
+  border-radius: 50px;
+}
+.whiteValue {
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50px;
+}
+.GemsBuySell {
+  margin-top: 40px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.userStockpile {
+  margin-top: 50px;
+}
+.stockpile {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.greyValueStockPile {
+  width: auto;
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  background: #404040;
+  color: #fff;
+  border-radius: 50px;
+}
+.whiteValueStockPile {
+  width: auto;
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50px;
+  margin-right: 10px;
+}
