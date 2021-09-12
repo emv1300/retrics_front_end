@@ -10,7 +10,7 @@
   background: #f5f5f5;
 }
 .Card:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  box-shadow: 0 4px 8px 0 #404040;
   transform: scale(1.1);
 }
 .topCard {
@@ -34,7 +34,7 @@
   background-color: #a20e0e;
   border-radius: 50%;
   border: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px 0 #404040;;
 }
 .plusMinusBT:active {
   transform: scale(0.9);
