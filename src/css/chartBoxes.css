@@ -1,0 +1,22 @@
+.chartContainer {
+    margin-left: 20%;
+  }
+  
+  .allCharts {
+    display: flex;
+  }
+  .leftSide {
+    margin: 20px;
+  }
+  .rightSide {
+    margin: 20px;
+  }
+  .chartsBox {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    width: 150px;
+    height: 20px;
+    background: #fff;
+    border-radius: 15px;
+  }
+  
