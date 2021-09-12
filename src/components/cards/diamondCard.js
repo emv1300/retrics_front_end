@@ -32,7 +32,7 @@ function DiamondCard() {
     };
 
     const decreaseSellQP= () => {
-        if (buyQ>0){
+        if (sellQ>0){
             setSellQ(sellQ => sellQ - 1);
             setSellQprice(sellQprice => (sellQ-1) * price);
         }
