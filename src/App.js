@@ -6,7 +6,7 @@ import AuthenticationContext,{ AuthenticationContextProvider } from './component
 
 function App() {
 
-  const {currentLoggedInUser} = useContext(AuthenticationContext);
+  const {userLoggedIn} = useContext(AuthenticationContext);
 
   const LogoutUser = () => {
     console.log("logged out");
@@ -16,7 +16,7 @@ function App() {
     <AuthenticationContextProvider>
       <div className="App">
         {
-          (currentLoggedInUser !== "") ? (
+          (userLoggedIn !== "") ? (
             
             <div className = "dashboard">
               <DashBoard Logout = {LogoutUser}/>
