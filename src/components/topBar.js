@@ -1,15 +1,14 @@
 import React from 'react';
 import whiteLogo from '../assets/tradeify_logo_white.png'
 import {BiUserCircle} from 'react-icons/bi'
+import { useHistory } from 'react-router';
 import '../css/dashboard.css';
-import DiamondCard from './cards/diamondCard';
-import EmeraldCard from './cards/emeraldCard';
-import RubyCard from './cards/rubyCard';
 
-function DashBoard({Logout}){
+
+function TopBar(){
 
     const accountBalance = localStorage.getItem('user_balance');
-
+    const history = useHistory();
 
     const NextDay = () => {
         let dprice = parseInt(localStorage.getItem('diamond'));
@@ -21,11 +20,19 @@ function DashBoard({Logout}){
         let rprice = parseInt(localStorage.getItem('ruby'));
         rprice += 5;
         localStorage.setItem("ruby", rprice);
+        
+        window.location.reload()
         console.log("next day")
+    }
+
+    const Logout = () => {
+        localStorage.clear()
+        history.push("/")
+        window.location.reload()
     }
     
     return(
-        <div>
+        <div> 
             <div className="topNavBar">
                 <img
                 className="whiteLogo"
@@ -44,25 +51,11 @@ function DashBoard({Logout}){
                 <BiUserCircle className="userIcon" size="2em" />
                 </button>
             </div>
-            <div className="lineUpElements">
-                <div className="sideBar"></div>
-                <div className="gemCards">
-                    <div className="dSpace">
-                        <DiamondCard/>
-                    </div>
-                    <div className="dSpace">
-                        <EmeraldCard/>  
-                    </div>
-                    <div className="dSpace">
-                        <RubyCard/>  
-                    </div>
-                </div>
-            </div>
         </div>       
     )
 }
 
-export default DashBoard;
+export default TopBar;
 
 /*
 
