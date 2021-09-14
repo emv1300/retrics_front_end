@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import tradeify_logo from '../assets/tradeify_logo.png';
-import '../css/app.css';
+import { useHistory } from 'react-router';
+import '../css/login.css'
 
 function LoginForm() {
 
     const [details, setDetails] = useState({email:"", password:""});
-    const [user, setUser] = useState({email: "", password: ""});
     const [error, setError] = useState("");
-    
-    const [userC, setUserC] = useState("");
+    const history = useHistory();
+
+    const submitHandler = e => {
+        e.preventDefault();
+        
+        Login(details);
+    }
 
     let users = [];
   
@@ -40,47 +45,45 @@ function LoginForm() {
             gems.push(x);
         });
     }).then(console.log(gems))
-    
+
     const Login = async (details)  => {
- 
+        
+        
+        let currentUser = users.find(element => element.email.toLowerCase() === details.email.toLowerCase());
+        console.log(currentUser)
         try{
-          let currentUser = users.find(element => element.email.toLowerCase() === details.email.toLowerCase());
-          let indGem = gems.find(element => element.name === 'diamond');
-          localStorage.setItem('diamond', indGem.value);
-          indGem = gems.find(element => element.name === 'emerald');
-          localStorage.setItem('emerald', indGem.value);
-          indGem = gems.find(element => element.name === 'ruby');
-          localStorage.setItem('ruby', indGem.value);
-          console.log(currentUser)
-          if(currentUser.password === details.password) {
-          
-            setUser({
-              email: details.email
-            });
-            setUserC(currentUser.email)
+            if(currentUser.password === details.password) {
             
-            localStorage.setItem('user_email', details.email);
-            localStorage.setItem('user_balance', currentUser.accountBalance);
-            localStorage.setItem('diamondsOwned', currentUser.diamondsOwned);
-            localStorage.setItem('emeraldsOwned', currentUser.emeraldsOwned);
-            localStorage.setItem('rubiesOwned', currentUser.rubiesOwned);
-    
-            //await currentLoggedInUser();
-          }else{
+                localStorage.setItem('user_email', details.email);
+                localStorage.setItem('user_balance', currentUser.accountBalance);
+                localStorage.setItem('diamondsOwned', currentUser.diamondsOwned);
+                localStorage.setItem('emeraldsOwned', currentUser.emeraldsOwned);
+                localStorage.setItem('rubiesOwned', currentUser.rubiesOwned);
+        
+                
+                let indGem = gems.find(element => element.name === 'diamond');
+                localStorage.setItem('diamond', indGem.value);
+                indGem = gems.find(element => element.name === 'emerald');
+                localStorage.setItem('emerald', indGem.value);
+                indGem = gems.find(element => element.name === 'ruby');
+                localStorage.setItem('ruby', indGem.value);
+
+                history.push('/trade');
+                window.location.reload();
+
+            }else{
             console.log("details don't match!");
             setError("details don't match!");
-          }
-        }catch(e){
-          console.log("details don't match!");
-          setError("details don't match!");
-        }  
+            }
+        } catch(e){
+            console.log("fix the context provider");
+        }
+        if (currentUser.password === undefined){
+            console.log("details don't match!");
+            setError("details don't match!");
+        }
       }
 
-    const submitHandler = e => {
-        e.preventDefault();
-        
-        Login(details);
-    }
 
     return (
         <div className = "backgroundColor">
@@ -114,4 +117,5 @@ function LoginForm() {
         </div>
     )
 }
-export default LoginForm
+
+export default LoginForm;
