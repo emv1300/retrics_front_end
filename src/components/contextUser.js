@@ -18,7 +18,7 @@ function AuthenticationContextProvider(props) {
       });
       const userLoggedIn = users.find(element => element.email.toLowerCase() === token.toLowerCase());
         
-      setUserLoggedIn(userLoggedIn.email);
+      setUserLoggedIn(userLoggedIn);
     }
   }
   useEffect( ()=>{
