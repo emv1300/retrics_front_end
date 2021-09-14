@@ -1,0 +1,20 @@
+.SideBarListElements{
+    padding: 10px;
+    border-radius: 0 20px 20px 0px;
+    margin-right: 30px;
+    margin-top: 50px;
+    padding-left: 30px;
+    background: #a20e0e;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 #404040;
+}
+.SideBarListElements:active{
+
+    transform: scale(0.9);
+}
+.SideBarList{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
