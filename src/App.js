@@ -1,34 +1,17 @@
-import React, { useState, useContext  } from 'react';
-import LoginForm from './components/login';
-import DashBoard from './components/mainPage';
-import { UserContext } from './components/authContext';
-import AuthenticationContext,{ AuthenticationContextProvider } from './components/contextUser';
+import React from "react";
+import RouterF from "./Router"
+import { AuthenticationContextProvider } from "./components/contextUser";
 
 function App() {
 
-  const {userLoggedIn} = useContext(AuthenticationContext);
-
-  const LogoutUser = () => {
-    console.log("logged out");
-  }
+  
 
   return (
-    <AuthenticationContextProvider>
-      <div className="App">
-        {
-          (userLoggedIn !== "") ? (
-            
-            <div className = "dashboard">
-              <DashBoard Logout = {LogoutUser}/>
-            </div>
-          ) : (
-            <div className = "Background">
-              <LoginForm />
-            </div>
-          )
-        }
-      </div>
-    </AuthenticationContextProvider>
+    <div>
+      <AuthenticationContextProvider>
+        <RouterF/>
+      </AuthenticationContextProvider>
+    </div>
   );
 }
 
