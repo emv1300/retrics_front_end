@@ -22,7 +22,7 @@ const BarChart = () => {
           labels: ["Diamond", "Ruby", "Emerald"],
           datasets: [
             {
-              label: "gem prices",
+              label: "current prices",
               data: [dprice, rprice, eprice],
               backgroundColor: [
                 "rgba(54, 162, 235, 0.2)",
