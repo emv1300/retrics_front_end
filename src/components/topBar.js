@@ -10,15 +10,19 @@ function TopBar(){
     const accountBalance = localStorage.getItem('user_balance');
     const history = useHistory();
 
+    function rngPrice(min, max){
+        return (Math.random() * (max - min) + min).toFixed(2);
+    }
+
     const NextDay = () => {
         let dprice = parseInt(localStorage.getItem('diamond'));
-        dprice += 20;
+        dprice += parseInt(rngPrice(10,25));
         localStorage.setItem("diamond", dprice);
         let eprice = parseInt(localStorage.getItem('emerald'));
-        eprice += 10;
+        eprice += parseInt(rngPrice(8,15));
         localStorage.setItem("emerald", eprice);
         let rprice = parseInt(localStorage.getItem('ruby'));
-        rprice += 5;
+        rprice += parseInt(rngPrice(3,9));
         localStorage.setItem("ruby", rprice);
         
         window.location.reload()
@@ -44,8 +48,7 @@ function TopBar(){
 
                 <p className="balance"> {accountBalance} $</p>
                 <button className="nextDayBT" onClick={NextDay}>
-                {" "}
-                Next day{" "}
+                Next Day
                 </button>
                 <button className="logoutBT" onClick={Logout}>
                 <BiUserCircle className="userIcon" size="2em" />
