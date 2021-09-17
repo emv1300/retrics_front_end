@@ -54,7 +54,7 @@ function LoginForm() {
         try{
             if(currentUser.password === details.password) {
             
-                localStorage.setItem('user_email', details.email);
+                sessionStorage.setItem('user_email', details.email);
                 localStorage.setItem('user_balance', currentUser.accountBalance);
                 localStorage.setItem('diamondsOwned', currentUser.diamondsOwned);
                 localStorage.setItem('emeraldsOwned', currentUser.emeraldsOwned);
@@ -63,10 +63,15 @@ function LoginForm() {
                 
                 let indGem = gems.find(element => element.name === 'diamond');
                 localStorage.setItem('diamond', indGem.value);
+                localStorage.setItem('originalDprice', indGem.value);
+
                 indGem = gems.find(element => element.name === 'emerald');
                 localStorage.setItem('emerald', indGem.value);
+                localStorage.setItem('originalEprice', indGem.value);
+
                 indGem = gems.find(element => element.name === 'ruby');
                 localStorage.setItem('ruby', indGem.value);
+                localStorage.setItem('originalRprice', indGem.value);
 
                 history.push('/trade');
                 window.location.reload();
