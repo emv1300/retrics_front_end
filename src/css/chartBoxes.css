@@ -1,25 +1,27 @@
 .chartContainer {
-    margin-left: 5%;
     text-align: center;
   }
   
   .allCharts {
     display: flex;
-    
   }
   .leftSide {
-    margin: 20px;
+    margin-right: 10px;
+    margin-left: 20px;
   }
   .rightSide {
-    margin: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
   }
   .chartsBox {
-    font-size: large;
+    padding: 20px 100px 20px;
+    margin: 15px;
     box-shadow: 0 4px 8px 0 #404040;
-    padding: 90px;
-    width: 350px;
-    height: 20px;
     background: #fff;
     border-radius: 15px;
+    transition: 0.3s;
+  }
+  .chartsBox:hover {
+    transform: scale(1.05);
   }
   
