@@ -2,11 +2,11 @@ import React from "react";
 
 export const SideBarData = [
     {
-        title : "trade",
+        title : "Trade",
         link: "/trade"
     },
     {   
-        title: "statistis",
+        title: "Statistics",
         link: "statistics"
     }
 ]
