@@ -5,7 +5,7 @@ function AuthenticationContextProvider(props) {
   const [userLoggedIn, setUserLoggedIn] = useState("");
   let users = [];
   async function getUserState() {
-    const token = localStorage.getItem('user_email')
+    const token = sessionStorage.getItem('user_email')
     console.log("token" + token)
     if (token){
       const data = await fetch("http://localhost:3000/users")
