@@ -1,4 +1,8 @@
 import React from 'react'
+import BarChart from './charts/barChart';
+import PieChart from './charts/pieChart';
+import RadarChart from './charts/radarChart';
+import LineChart from './charts/lineChart';
 import "../css/chartBoxes.css"
 
 function Charts() {
@@ -7,15 +11,22 @@ function Charts() {
         <div className="chartContainer">
             <div className="allCharts">
                 <div className="leftSide">
-                    <p className="chartsBox"> Bar charts </p>
+                    <div className="chartsBox"> 
+                        <BarChart/>
+                    </div>
 
-                    <p className="chartsBox"> Radar charts </p>
+                    <div className="chartsBox"> 
+                        <PieChart/>
+                    </div>
                 </div>
 
                 <div className="rightSide">
-                    <p className="chartsBox"> Line charts </p>
-
-                    <p className="chartsBox"> Pie charts </p>
+                    <div className="chartsBox"> 
+                        <RadarChart/>
+                    </div>
+                    <div className="chartsBox"> 
+                        <LineChart/>
+                    </div>
                 </div>
             </div>
         </div>
