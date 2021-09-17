@@ -8,13 +8,26 @@ import '../css/dashboard.css';
 function TopBar(){
 
     const accountBalance = localStorage.getItem('user_balance');
+    
     const history = useHistory();
 
     function rngPrice(min, max){
         return (Math.random() * (max - min) + min).toFixed(2);
     }
 
+    const Today = () => {
+        let dprice = parseInt(localStorage.getItem('originalDprice'));
+        localStorage.setItem("diamond", dprice);
+        let eprice = parseInt(localStorage.getItem('originalEprice'));
+        localStorage.setItem("emerald", eprice);
+        let rprice = parseInt(localStorage.getItem('originalRprice'));
+        localStorage.setItem("ruby", rprice);
+
+        window.location.reload();
+    }
+
     const NextDay = () => {
+        
         let dprice = parseInt(localStorage.getItem('diamond'));
         dprice += parseInt(rngPrice(10,25));
         localStorage.setItem("diamond", dprice);
@@ -25,14 +38,15 @@ function TopBar(){
         rprice += parseInt(rngPrice(3,9));
         localStorage.setItem("ruby", rprice);
         
-        window.location.reload()
-        console.log("next day")
+        window.location.reload();
+        console.log("next day");
     }
 
     const Logout = () => {
-        localStorage.clear()
-        history.push("/")
-        window.location.reload()
+        localStorage.clear();
+        sessionStorage.clear();
+        history.push("/");
+        window.location.reload();
     }
     
     return(
@@ -47,8 +61,12 @@ function TopBar(){
                 />
 
                 <p className="balance"> {accountBalance} $</p>
-                <button className="nextDayBT" onClick={NextDay}>
+                <button className="dayBT" onClick={NextDay}>
                 Next Day
+                </button>
+
+                <button className="dayBT" onClick={Today}>
+                Today
                 </button>
                 <button className="logoutBT" onClick={Logout}>
                 <BiUserCircle className="userIcon" size="2em" />
