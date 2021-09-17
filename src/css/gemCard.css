@@ -11,7 +11,7 @@
 }
 .Card:hover {
   box-shadow: 0 4px 8px 0 #404040;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .topCard {
   width: auto;
