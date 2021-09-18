@@ -30,7 +30,7 @@ body {
   display: inline-block;
 }
 
-.topNavBar .nextDayBT:active {
+.topNavBar .dayBT:active {
   transform: scale(0.9);
 }
 
