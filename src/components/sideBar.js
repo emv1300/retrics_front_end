@@ -5,7 +5,7 @@ import "../css/sidebar.css"
 function SideBar() {
 
     return(
-        <div title = "sideBar" className = "SideBar">
+        <div data-testid = "sideBar" className = "SideBar">
             <ul className = "SideBarList">
             {
                 SideBarData.map((val, key) =>{
