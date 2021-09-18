@@ -30,4 +30,10 @@ describe("gemCard", () => {
         const buttonElement = component.getByTitle("minusSellBt");
         fireEvent(buttonElement, new MouseEvent("click"));
     });
+
+    test("gem image should be visible", ()=>{
+        const component = render(<DiamondCard/>);
+        const imgElement = component.getByRole("img");
+        expect(imgElement).toBeInTheDocument();
+    });
 })
