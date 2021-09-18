@@ -60,7 +60,7 @@ function TopBar(){
                 width="240"
                 />
 
-                <p className="balance"> {accountBalance} $</p>
+                <p title = "userBalance" className="balance"> {accountBalance} $</p>
                 <button className="dayBT" onClick={NextDay}>
                 Next Day
                 </button>
