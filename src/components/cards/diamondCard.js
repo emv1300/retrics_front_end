@@ -39,7 +39,7 @@ function DiamondCard() {
     };
     
     return (
-        <div className="Card">
+        <div title = "dCard" className="Card">
         <div className="topCard">
             <img className="cardIMG" src={diamondImg} alt="diamond" width="50px" />
             <div className="topCardDetails">
@@ -51,16 +51,16 @@ function DiamondCard() {
         <div className="bottomCard">
             <p className="greyText">Buy</p>
             <div className="GemsBuySell">
-                <button className = "plusMinusBT" onClick = {decreaseBuyQP}> - </button>
+                <button title = "plusBuyBt" className = "plusMinusBT" onClick = {decreaseBuyQP}> - </button>
                 <div className="whiteValue">{buyQ} </div>
-                <button className = "plusMinusBT" onClick = {increaseBuyQP}> + </button>
+                <button title = "minusBuyBt" className = "plusMinusBT" onClick = {increaseBuyQP}> + </button>
                 <div className="greyValue">{buyQprice} $</div>
             </div>
             <p className="greyText">Sell</p>
             <div className="GemsBuySell">
-                <button className = "plusMinusBT" onClick = {decreaseSellQP}> - </button>
+                <button title = "plusSellBt" className = "plusMinusBT" onClick = {decreaseSellQP}> - </button>
                 <div className="whiteValue">{sellQ} </div>
-                <button className = "plusMinusBT" onClick = {increaseSellQP}> + </button>
+                <button title = "minusSellBt" className = "plusMinusBT" onClick = {increaseSellQP}> + </button>
                 <div className="greyValue">{sellQprice} $</div>
             </div>
             <div className="userStockpile">

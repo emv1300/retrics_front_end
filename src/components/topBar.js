@@ -51,7 +51,7 @@ function TopBar(){
     
     return(
         <div> 
-            <div className="topNavBar">
+            <div title = "topBar" className="topNavBar">
                 <img
                 className="whiteLogo"
                 alt="website logo"
@@ -68,7 +68,7 @@ function TopBar(){
                 <button className="dayBT" onClick={Today}>
                 Today
                 </button>
-                <button className="logoutBT" onClick={Logout}>
+                <button title = "logOutBT" className="logoutBT" onClick={Logout}>
                 <BiUserCircle className="userIcon" size="2em" />
                 </button>
             </div>
