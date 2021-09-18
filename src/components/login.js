@@ -51,48 +51,48 @@ function LoginForm() {
         
         let currentUser = users.find(element => element.email.toLowerCase() === details.email.toLowerCase());
         console.log(currentUser)
-        try{
-            if(currentUser.password === details.password) {
-            
-                sessionStorage.setItem('user_email', details.email);
-                localStorage.setItem('user_balance', currentUser.accountBalance);
-                localStorage.setItem('diamondsOwned', currentUser.diamondsOwned);
-                localStorage.setItem('emeraldsOwned', currentUser.emeraldsOwned);
-                localStorage.setItem('rubiesOwned', currentUser.rubiesOwned);
         
+        
+            try{
+                if(currentUser.password === details.password) {
                 
-                let indGem = gems.find(element => element.name === 'diamond');
-                localStorage.setItem('diamond', indGem.value);
-                localStorage.setItem('originalDprice', indGem.value);
+                    sessionStorage.setItem('user_email', details.email);
+                    localStorage.setItem('user_balance', currentUser.accountBalance);
+                    localStorage.setItem('diamondsOwned', currentUser.diamondsOwned);
+                    localStorage.setItem('emeraldsOwned', currentUser.emeraldsOwned);
+                    localStorage.setItem('rubiesOwned', currentUser.rubiesOwned);
+            
+                    
+                    let indGem = gems.find(element => element.name === 'diamond');
+                    localStorage.setItem('diamond', indGem.value);
+                    localStorage.setItem('originalDprice', indGem.value);
 
-                indGem = gems.find(element => element.name === 'emerald');
-                localStorage.setItem('emerald', indGem.value);
-                localStorage.setItem('originalEprice', indGem.value);
+                    indGem = gems.find(element => element.name === 'emerald');
+                    localStorage.setItem('emerald', indGem.value);
+                    localStorage.setItem('originalEprice', indGem.value);
 
-                indGem = gems.find(element => element.name === 'ruby');
-                localStorage.setItem('ruby', indGem.value);
-                localStorage.setItem('originalRprice', indGem.value);
+                    indGem = gems.find(element => element.name === 'ruby');
+                    localStorage.setItem('ruby', indGem.value);
+                    localStorage.setItem('originalRprice', indGem.value);
 
-                history.push('/trade');
-                window.location.reload();
+                    history.push('/trade');
+                    window.location.reload();
 
-            }else{
-            console.log("details don't match!");
-            setError("details don't match!");
+                }else{
+                console.log("details don't match!");
+                setError("details don't match!");
+                }
+            } catch(e){
+                console.log("details don't match!");
+                setError("details don't match!");
             }
-        } catch(e){
-            console.log("fix the context provider");
-        }
-        if (currentUser.password === undefined){
-            console.log("details don't match!");
-            setError("details don't match!");
-        }
+        
       }
 
 
     return (
         <div className = "backgroundColor">
-        <form onSubmit = {submitHandler} className = "box">
+        <form title = "loginForm" onSubmit = {submitHandler} className = "box">
             <div className = "formInner"> 
                 <img className = "loginLogo" alt = "website logo" src = {tradeify_logo}  heigth = "120" width = "240"  />
                 {/* Error */}
