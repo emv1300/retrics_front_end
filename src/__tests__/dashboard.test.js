@@ -23,4 +23,28 @@ describe("dashboard", () => {
         const logoutBtElement = component.getByTitle('logOutBT');
         fireEvent(logoutBtElement, new MouseEvent('click'));
     });
+
+    test("company logo should visible", () => {
+        const component = render(<TopBar/>);
+        const logoElement = component.getByRole("img");
+        expect(logoElement).toBeInTheDocument();
+    });
+
+    test("user balance should visible", () => {
+        const component = render(<TopBar/>);
+        const balanceElement = component.getByTitle("userBalance");
+        expect(balanceElement).toBeInTheDocument();
+    });
+
+    test("nex day button should visible", () => {
+        const component = render(<TopBar/>);
+        const nextDayBtElement = component.getByText("Next Day");
+        expect(nextDayBtElement).toBeInTheDocument();
+    });
+
+    test("today button should visible", () => {
+        const component = render(<TopBar/>);
+        const todayBtElement = component.getByText("Today");
+        expect(todayBtElement).toBeInTheDocument();
+    });
 })
