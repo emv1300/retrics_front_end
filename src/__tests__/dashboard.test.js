@@ -8,19 +8,19 @@ describe("dashboard", () => {
 
     test("top bar should be visible to user", () => {
         const component = render(<TopBar/>);
-        const topBarElement = component.getByTitle('topBar');
+        const topBarElement = component.getByTestId('topBar');
         expect(topBarElement).toBeInTheDocument();
     });
 
     test("side bar should be visible to user", () => {
         const component = render(<SideBar/>);
-        const sideBarElement = component.getByTitle('sideBar');
+        const sideBarElement = component.getByTestId('sideBar');
         expect(sideBarElement).toBeInTheDocument();
     });
 
     test("logout button should be clickable", () => {
         const component = render(<TopBar/>);
-        const logoutBtElement = component.getByTitle('logOutBT');
+        const logoutBtElement = component.getByTestId('logOutBT');
         fireEvent(logoutBtElement, new MouseEvent('click'));
     });
 
@@ -32,7 +32,7 @@ describe("dashboard", () => {
 
     test("user balance should visible", () => {
         const component = render(<TopBar/>);
-        const balanceElement = component.getByTitle("userBalance");
+        const balanceElement = component.getByTestId("userBalance");
         expect(balanceElement).toBeInTheDocument();
     });
 

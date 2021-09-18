@@ -7,7 +7,7 @@ describe("login", () => {
     
     test("login form should appear in document", () =>{
         const component = render(<LoginForm/>);
-        const loginFormElement = component.getByTitle('loginForm')
+        const loginFormElement = component.getByTestId('loginForm')
         expect(loginFormElement).toBeInTheDocument();
     })
 
